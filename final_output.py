@@ -1,7 +1,7 @@
 import tldextract
 import article_html_output
 import mercury_html_output
-
+import webbrowser
 
 article_links = "article_links.txt"
 mercury_links = "mercury_links.txt"
@@ -59,9 +59,11 @@ def get_result():
         output = mercury_html_output.mercury_output(url)
 
     return output
-
+f=open("output_html.html", 'w')
 a=get_result()
-print(a)
+f.write(a)
+f.close()
+webbrowser.open_new_tab('output_html.html')
 
 
 
